@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css/main.css">
+	
+    <title>Brief Summary</title>
+  </head>
+  <body>
+  <div class="container">
+
+	  <div class="card">
+		<div class="card-body">
+		
+		<div id="err" class="error-summary" tabindex="-1" aria-hidden="true">
+    <h2>Errors found in the form</h2>
+    <p><em>Whoops!</em> - There is a problem with the form, please check and correct the following:</p>
+    <ul></ul>
+  </div>
+
+  <form id="form1" method="post">
+
+    <p><em>Fields in <strong>bold</strong> are required.</em></p>
+
+    <div class="form-group">
+      <label for="fname" class="required">First Name</label>
+      <div class="control-input">
+        <input type="text" id="fname" name="fname" class="form-control" data-validation="fname" required="required">
+        <i class="validation-icon"></i>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="hphone" class="required">Home Phone</label>
+      <div class="control-input">
+        <input type="text" id="hphone" name="hphone" class="form-control" data-validation="phone" required="required">
+        <i class="validation-icon"></i>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="wphone">Work Phone</label>
+      <div class="control-input">
+        <input type="text" id="wphone" name="wphone" class="form-control" data-validation="phone">
+        <i class="validation-icon"></i>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dob">Birth Month</label>
+      <div class="control-input">
+        <input type="text" id="dob" name="dob" class="form-control">
+        <i class="validation-icon"></i>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="abartn">ABA Routing Number</label>
+      <div class="control-input">
+        <input type="text" id="abartn" name="abartn" class="form-control" data-validation="abartn" value="114923756" required="true">
+        <i class="validation-icon"></i>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="gender" class="required">Gender</label>
+      <div class="control-input">
+        <select type="text" id="gender" name="gender" class="form-control" required="required">
+          <option value="">Choose One</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+        <i class="validation-icon"></i>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button id="saveBtn" type="submit">Save</button>
+      <button id="resetBtn" type="reset">Reset</button>
+    </div>
+
+  </form>
+
+  <script src="/lib/jquery-1.7.2.js"></script>
+  <script src="/dist/jquery.ada-validate.js"></script>
+  <script src="/js/custom-validations.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    $('#gender').validatedInput({
+      requiredNote: 'Selection is required'
+    });
+
+    $('#saveBtn').validatedForm({
+      summary: '#err',
+      submits: false,
+      container: '#form1',
+      resetbtn: '#resetBtn',
+      onSuccess: function () {
+        console.log('Success', this);
+      }
+    });
+  </script>
+		
+		
+		</div>
+	  </div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </div>
+  </body>
+</html>
+
+
